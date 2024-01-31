@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            height:100vh
+        }
+        form{
+            height:auto;
+            width: 300px;
+            background: black;
+            text-align: center;
+            color: wheat;
+        }
+        form input{
+            margin: 10px;
+            text-align: center;
+            padding: 10px;
+            border:none;
+            outline: none;
+            background: transparent;
+            border-bottom: 1px solid red;
+            color: white;
+        }
+        form button{
+            margin: 10px;
+            padding: 10px;
+            width: 150px;
+            background: orange;
+            border: 1px solid orange;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <h1>LOG HERE</h1>
+
+        <input type="email" name="email" id="email"  placeholder="Enter your name">
+        <br>
+        <input type="password" name="password" id="password"  placeholder="Enter your name">
+        <br>
+        <button id="btn1">Submit</button>
+        <br>
+        <p>Already Have Account <a href="./signup.htm"></a></p>
+    </form>
+    <script>
+        let a= document.getElementById('btn1')
+        a.addEventListener('click',(e)=>{
+            e.preventDefault()
+            let email= document.getElementById('email').value
+            let password= document.getElementById('password').value
+            let userEmail= window.sessionStorage.getItem('email')
+            let userPassword = window.sessionStorage.getItem('password')
+            if (userEmail === email && userPassword === password) {
+                window.open('./home.htm')
+                
+            } else {
+                alert("invalid Details")
+            }
+            
+        })
+    </script>
+</body>
+</html>

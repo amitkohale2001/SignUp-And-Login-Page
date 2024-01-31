@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <button id="btn1">Logout</button>
+    <script>
+        let a = document.getElementById('btn1')
+        a.addEventListener('click',()=>{
+            window.sessionStorage.clear()
+            window.open('./login.htm')
+        })
+    </script>
+</body>
+</html>
